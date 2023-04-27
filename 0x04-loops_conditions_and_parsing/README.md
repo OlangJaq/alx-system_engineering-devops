@@ -1,8 +1,8 @@
 #Background Context
 
 
-## Resources
-# Read or watch:
+# Resources
+## Read or watch:
 + (Loops sampl)[https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_01.html]
 + Variable assignment and arithmetic
 + Comparison operators
