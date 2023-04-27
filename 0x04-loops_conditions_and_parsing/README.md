@@ -1,24 +1,23 @@
-## Background Context
+# Background Context
 
-# Resources
-## Read or watch:
+## Resources
+### Read or watch:
 + [Loops sampl](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_01.html)
 + [Variable assignment and arithmetic](https://tldp.org/LDP/abs/html/comparison-ops.html)
 + [Comparison operators](https://tldp.org/LDP/abs/html/ops.html)
 + [File test operators](https://tldp.org/LDP/abs/html/fto.html)
 + [Make your scripts portable](https://www.cyberciti.biz/tips/finding-bash-perl-python-portably-using-env.html)
 
-## `man or help`:
-```
-env
-cut
-for
-while
-until
-if
-```
+### `man or help`:
++ `env`
++ `cut`
++ `for`
++ `while`
++ `until`
++ `if`
 
-## Learning Objectives
+
+# Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
 ## General
@@ -28,8 +27,8 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 + How to use `if`, `else`, `elif` and `case` condition statements
 + How to use the `cut` command
 + What are files and other comparison operators, and how to use them
-# Requiremen 
-## General
+## Requiremen 
+### General
 + Allowed editors: vi, vim, emacs
 + All your files will be interpreted on Ubuntu 20.04 LTS
 + All your files should end with a new line
@@ -39,7 +38,7 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 + Your Bash script must pass Shellcheck (version 0.7.0) without any error
 + The first line of all your Bash scripts should be exactly #!/usr/bin/env bash
 + The second line of all your Bash scripts should be a comment explaining what is the script doing
-## Copyright - Plagiarism
+### Copyright - Plagiarism
 + You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
 + You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
 + You are not allowed to publish any content of this project.
