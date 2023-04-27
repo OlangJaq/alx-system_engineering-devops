@@ -8,7 +8,7 @@
 + [File test operators](https://tldp.org/LDP/abs/html/fto.html)
 + [Make your scripts portable](https://www.cyberciti.biz/tips/finding-bash-perl-python-portably-using-env.html)
 
-## == man or help:==
+## `man or help`:
 ```
 env
 cut
