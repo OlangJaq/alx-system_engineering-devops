@@ -5,10 +5,10 @@
 ## Resources
 ### Read or watch:
 
-+ Linux PID
-+ Linux process
-+ Linux signal
-+ Process management in linux
++ (Linux PID)[http://www.linfo.org/pid.html]
++ (Linux process)[https://www.thegeekstuff.com/2012/03/linux-processes-environment/]
++ (Linux signal)[https://www.educative.io/answers/what-are-linux-signals]
++ (Process management in linux)[https://www.digitalocean.com/community/tutorials/process-management-in-linux]
 
 ### man or help:
 + `ps`
@@ -19,7 +19,7 @@
 + `trap`
 ## Learning Objectives
 ```
-At the end of this project, you are expected to be able to explain to anyone, without the help of *Google:*
+At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 ```
 ### General
 + What is a PID
