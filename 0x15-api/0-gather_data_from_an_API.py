@@ -5,29 +5,51 @@ returns info about employee TODO progress
 Implemented using recursion
 """
 import re
-import requests
 import sys
+import requests
 
+def fetch_employee_data(employee_id):
+    # URLs for the API endpoints
+    users_url = "https://jsonplaceholder.typicode.com/users"
+    todos_url = "https://jsonplaceholder.typicode.com/todos"
+    
+    # Fetch user data
+    users_response = requests.get(users_url)
+    users = users_response.json()
+    
+    # Fetch TODO data
+    todos_response = requests.get(todos_url)
+    todos = todos_response.json()
+    
+    # Find the user with the given employee ID
+    user = next((user for user in users if user['id'] == employee_id), None)
+    if not user:
+        print(f"User with ID {employee_id} not found.")
+        return
 
-API = "https://jsonplaceholder.typicode.com"
-"""REST API url"""
+    # Collect TODOs for the user
+    user_todos = [todo for todo in todos if todo['userId'] == employee_id]
+    
+    # Calculate number of completed and total tasks
+    total_tasks = len(user_todos)
+    completed_tasks = sum(1 for todo in user_todos if todo['completed'])
+    
+    # Print employee TODO list progress
+    print(f"Employee {user['name']} is done with tasks({completed_tasks}/{total_tasks}):")
+    
+    # Print titles of completed tasks
+    for todo in user_todos:
+        if todo['completed']:
+            print(f"     {todo['title']}")
 
-
-if __name__ == '__main__':
-    if len(sys.argv) > 1:
-        if re.fullmatch(r'\d+', sys.argv[1]):
-            id = int(sys.argv[1])
-            user_res = requests.get('{}/users/{}'.format(API, id)).json()
-            todos_res = requests.get('{}/todos'.format(API)).json()
-            user_name = user_res.get('name')
-            todos = list(filter(lambda x: x.get('userId') == id, todos_res))
-            todos_done = list(filter(lambda x: x.get('completed'), todos))
-            print(
-                'Employee {} is done with tasks({}/{}):'.format(
-                    user_name,
-                    len(todos_done),
-                    len(todos)
-                )
-            )
-            for todo_done in todos_done:
-                print('\t {}'.format(todo_done.get('title')))
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python3 0-gather_data_from_an_API.py EMPLOYEE_ID")
+        sys.exit(1)
+    
+    try:
+        employee_id = int(sys.argv[1])
+        fetch_employee_data(employee_id)
+    except ValueError:
+        print("Employee ID must be an integer.")
+        sys.exit(1)
